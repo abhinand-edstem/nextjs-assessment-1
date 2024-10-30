@@ -22,7 +22,7 @@ export default function ContentActions(){
     }
 
     return(
-        <div className="flex h-10 gap-4 py-2">
+        <div className="flex items-center gap-4 px-10 border-b">
             <div>
                 <button className="" type="button" onClick={handleToggleView}>
                     {isListView?<Image className="w-6 h-6"src={listIcon} alt='list'/>
