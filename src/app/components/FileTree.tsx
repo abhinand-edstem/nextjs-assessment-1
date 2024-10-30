@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { fileSystem } from '../data/fileSystemData';
 
-export default function FileTree() {
+export default function FileTree({onSelectPath}) {
     const [rootFileOpen, setrootFileOpen] = useState(false);
     const [mainFolder, setmainFolder] = useState({
         open: false,
@@ -29,11 +29,11 @@ export default function FileTree() {
         }
         else if (fileSystem.items.file1.id === value) {
             if ('content' in fileSystem.items.file1) {
-                console.log("Contet of the file -", fileSystem.items.file1);
+                onSelectPath(fileSystem.items.file1);
                 localStorage.setItem('folderData', JSON.stringify(fileSystem.items.file1))
             }
         } else if (fileSystem.items.file2.id === value) {
-            console.log("Contet of the file -", fileSystem.items.file2);
+            onSelectPath(fileSystem.items.file2);
             localStorage.setItem('folderData', JSON.stringify(fileSystem.items.file2))
         }
     }
