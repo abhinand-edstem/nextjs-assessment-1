@@ -1,5 +1,11 @@
+import ContentActions from "./ContentActions";
+import Content from "./Content"
+
 export default function ContentView(){
     return(
-        <div>ContentView</div>
+        <div>
+            <ContentActions/>
+            <Content/>
+        </div>
     )
 }
